@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>9BC3D63E-8AA7-434E-ADBB-62EC309626E5</string>
+	<key>IDESourceControlProjectName</key>
+	<string>BeaconHue</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>21FC7ED6-F8AE-4D8C-AF05-5FC0F3E7D708</key>
+		<string>https://github.com/Estimote/iOS-SDK.git</string>
+		<key>EE418F77-6A78-4162-98B6-A786FD381283</key>
+		<string>ssh://github.com/krasi-pl/BeaconHue.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>BeaconHue/BeaconHue.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>21FC7ED6-F8AE-4D8C-AF05-5FC0F3E7D708</key>
+		<string>../../../Estimote-iOS-SDK</string>
+		<key>EE418F77-6A78-4162-98B6-A786FD381283</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/krasi-pl/BeaconHue.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>EE418F77-6A78-4162-98B6-A786FD381283</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>EE418F77-6A78-4162-98B6-A786FD381283</string>
+			<key>IDESourceControlWCCName</key>
+			<string>BeaconHue</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>21FC7ED6-F8AE-4D8C-AF05-5FC0F3E7D708</string>
+			<key>IDESourceControlWCCName</key>
+			<string>iOS-SDK</string>
+		</dict>
+	</array>
+</dict>
+</plist>

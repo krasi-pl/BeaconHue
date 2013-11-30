@@ -1,0 +1,1 @@
+../../../../../Estimote-iOS-SDK/EstimoteSDK/Headers/ESTBeaconRegion.h

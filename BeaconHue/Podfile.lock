@@ -1,0 +1,14 @@
+PODS:
+  - EstimoteSDK (1.0.0)
+
+DEPENDENCIES:
+  - EstimoteSDK (from `../../Estimote-iOS-SDK/`)
+
+EXTERNAL SOURCES:
+  EstimoteSDK:
+    :path: ../../Estimote-iOS-SDK/
+
+SPEC CHECKSUMS:
+  EstimoteSDK: e8729499fa74d6d76996967c3077d9800d47c627
+
+COCOAPODS: 0.28.0
