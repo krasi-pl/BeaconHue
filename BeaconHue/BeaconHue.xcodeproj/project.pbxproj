@@ -7,29 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6FB5CFDC184A1A2E00A91FF0 /* PHFindLightsManualEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FB5CFBA184A1A2E00A91FF0 /* PHFindLightsManualEntryViewController.m */; };
-		6FB5CFDD184A1A2E00A91FF0 /* PHFindLightsManualEntryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FB5CFBB184A1A2E00A91FF0 /* PHFindLightsManualEntryViewController.xib */; };
-		6FB5CFDE184A1A2E00A91FF0 /* PHFindLightsResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FB5CFBD184A1A2E00A91FF0 /* PHFindLightsResultViewController.m */; };
-		6FB5CFDF184A1A2E00A91FF0 /* PHFindLightsResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FB5CFBE184A1A2E00A91FF0 /* PHFindLightsResultViewController.xib */; };
-		6FB5CFE0184A1A2E00A91FF0 /* PHFindLightsStartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FB5CFC0184A1A2E00A91FF0 /* PHFindLightsStartViewController.m */; };
-		6FB5CFE1184A1A2E00A91FF0 /* PHFindLightsStartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FB5CFC1184A1A2E00A91FF0 /* PHFindLightsStartViewController.xib */; };
-		6FB5CFE2184A1A2E00A91FF0 /* PHLoadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FB5CFC4184A1A2E00A91FF0 /* PHLoadingViewController.m */; };
-		6FB5CFE3184A1A2E00A91FF0 /* PHLoadingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FB5CFC5184A1A2E00A91FF0 /* PHLoadingViewController.xib */; };
-		6FB5CFE4184A1A2E00A91FF0 /* PHBridgeConfigurationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FB5CFC7184A1A2E00A91FF0 /* PHBridgeConfigurationViewController.m */; };
-		6FB5CFE5184A1A2E00A91FF0 /* PHBridgeConfigurationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FB5CFC8184A1A2E00A91FF0 /* PHBridgeConfigurationViewController.xib */; };
 		6FB5CFE6184A1A2E00A91FF0 /* PHBridgePushLinkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FB5CFCA184A1A2E00A91FF0 /* PHBridgePushLinkViewController.m */; };
 		6FB5CFE7184A1A2E00A91FF0 /* PHBridgePushLinkViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FB5CFCB184A1A2E00A91FF0 /* PHBridgePushLinkViewController.xib */; };
-		6FB5CFE8184A1A2E00A91FF0 /* PHBridgeSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FB5CFCD184A1A2E00A91FF0 /* PHBridgeSelectionViewController.m */; };
-		6FB5CFE9184A1A2E00A91FF0 /* PHBridgeSelectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FB5CFCE184A1A2E00A91FF0 /* PHBridgeSelectionViewController.xib */; };
-		6FB5CFEA184A1A2E00A91FF0 /* PHConfigurationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FB5CFD0184A1A2E00A91FF0 /* PHConfigurationViewController.m */; };
-		6FB5CFEB184A1A2E00A91FF0 /* PHConfigurationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FB5CFD1184A1A2E00A91FF0 /* PHConfigurationViewController.xib */; };
 		6FB5CFEC184A1A2E00A91FF0 /* addlightmanual.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FB5CFD3184A1A2E00A91FF0 /* addlightmanual.png */; };
 		6FB5CFED184A1A2E00A91FF0 /* addlightmanual@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FB5CFD4184A1A2E00A91FF0 /* addlightmanual@2x.png */; };
 		6FB5CFEE184A1A2E00A91FF0 /* addlights.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FB5CFD5184A1A2E00A91FF0 /* addlights.png */; };
 		6FB5CFEF184A1A2E00A91FF0 /* addlights@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FB5CFD6184A1A2E00A91FF0 /* addlights@2x.png */; };
 		6FB5CFF0184A1A2E00A91FF0 /* press_smartbridge.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FB5CFD7184A1A2E00A91FF0 /* press_smartbridge.png */; };
 		6FB5CFF1184A1A2E00A91FF0 /* press_smartbridge@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FB5CFD8184A1A2E00A91FF0 /* press_smartbridge@2x.png */; };
-		6FB5CFF2184A1A2E00A91FF0 /* PHSoftwareUpdateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FB5CFDB184A1A2E00A91FF0 /* PHSoftwareUpdateManager.m */; };
 		6FEAD908184A07B100839DE3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FEAD907184A07B100839DE3 /* Foundation.framework */; };
 		6FEAD90A184A07B100839DE3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FEAD909184A07B100839DE3 /* CoreGraphics.framework */; };
 		6FEAD90C184A07B100839DE3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FEAD90B184A07B100839DE3 /* UIKit.framework */; };
@@ -65,38 +50,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6FB5CFB9184A1A2E00A91FF0 /* PHFindLightsManualEntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHFindLightsManualEntryViewController.h; sourceTree = "<group>"; };
-		6FB5CFBA184A1A2E00A91FF0 /* PHFindLightsManualEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHFindLightsManualEntryViewController.m; sourceTree = "<group>"; };
-		6FB5CFBB184A1A2E00A91FF0 /* PHFindLightsManualEntryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PHFindLightsManualEntryViewController.xib; sourceTree = "<group>"; };
-		6FB5CFBC184A1A2E00A91FF0 /* PHFindLightsResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHFindLightsResultViewController.h; sourceTree = "<group>"; };
-		6FB5CFBD184A1A2E00A91FF0 /* PHFindLightsResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHFindLightsResultViewController.m; sourceTree = "<group>"; };
-		6FB5CFBE184A1A2E00A91FF0 /* PHFindLightsResultViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PHFindLightsResultViewController.xib; sourceTree = "<group>"; };
-		6FB5CFBF184A1A2E00A91FF0 /* PHFindLightsStartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHFindLightsStartViewController.h; sourceTree = "<group>"; };
-		6FB5CFC0184A1A2E00A91FF0 /* PHFindLightsStartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHFindLightsStartViewController.m; sourceTree = "<group>"; };
-		6FB5CFC1184A1A2E00A91FF0 /* PHFindLightsStartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PHFindLightsStartViewController.xib; sourceTree = "<group>"; };
-		6FB5CFC3184A1A2E00A91FF0 /* PHLoadingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHLoadingViewController.h; sourceTree = "<group>"; };
-		6FB5CFC4184A1A2E00A91FF0 /* PHLoadingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHLoadingViewController.m; sourceTree = "<group>"; };
-		6FB5CFC5184A1A2E00A91FF0 /* PHLoadingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PHLoadingViewController.xib; sourceTree = "<group>"; };
-		6FB5CFC6184A1A2E00A91FF0 /* PHBridgeConfigurationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHBridgeConfigurationViewController.h; sourceTree = "<group>"; };
-		6FB5CFC7184A1A2E00A91FF0 /* PHBridgeConfigurationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHBridgeConfigurationViewController.m; sourceTree = "<group>"; };
-		6FB5CFC8184A1A2E00A91FF0 /* PHBridgeConfigurationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PHBridgeConfigurationViewController.xib; sourceTree = "<group>"; };
 		6FB5CFC9184A1A2E00A91FF0 /* PHBridgePushLinkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHBridgePushLinkViewController.h; sourceTree = "<group>"; };
 		6FB5CFCA184A1A2E00A91FF0 /* PHBridgePushLinkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHBridgePushLinkViewController.m; sourceTree = "<group>"; };
 		6FB5CFCB184A1A2E00A91FF0 /* PHBridgePushLinkViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PHBridgePushLinkViewController.xib; sourceTree = "<group>"; };
-		6FB5CFCC184A1A2E00A91FF0 /* PHBridgeSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHBridgeSelectionViewController.h; sourceTree = "<group>"; };
-		6FB5CFCD184A1A2E00A91FF0 /* PHBridgeSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHBridgeSelectionViewController.m; sourceTree = "<group>"; };
-		6FB5CFCE184A1A2E00A91FF0 /* PHBridgeSelectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PHBridgeSelectionViewController.xib; sourceTree = "<group>"; };
-		6FB5CFCF184A1A2E00A91FF0 /* PHConfigurationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHConfigurationViewController.h; sourceTree = "<group>"; };
-		6FB5CFD0184A1A2E00A91FF0 /* PHConfigurationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHConfigurationViewController.m; sourceTree = "<group>"; };
-		6FB5CFD1184A1A2E00A91FF0 /* PHConfigurationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PHConfigurationViewController.xib; sourceTree = "<group>"; };
 		6FB5CFD3184A1A2E00A91FF0 /* addlightmanual.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addlightmanual.png; sourceTree = "<group>"; };
 		6FB5CFD4184A1A2E00A91FF0 /* addlightmanual@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "addlightmanual@2x.png"; sourceTree = "<group>"; };
 		6FB5CFD5184A1A2E00A91FF0 /* addlights.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addlights.png; sourceTree = "<group>"; };
 		6FB5CFD6184A1A2E00A91FF0 /* addlights@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "addlights@2x.png"; sourceTree = "<group>"; };
 		6FB5CFD7184A1A2E00A91FF0 /* press_smartbridge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = press_smartbridge.png; sourceTree = "<group>"; };
 		6FB5CFD8184A1A2E00A91FF0 /* press_smartbridge@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "press_smartbridge@2x.png"; sourceTree = "<group>"; };
-		6FB5CFDA184A1A2E00A91FF0 /* PHSoftwareUpdateManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHSoftwareUpdateManager.h; sourceTree = "<group>"; };
-		6FB5CFDB184A1A2E00A91FF0 /* PHSoftwareUpdateManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHSoftwareUpdateManager.m; sourceTree = "<group>"; };
 		6FEAD904184A07B100839DE3 /* BeaconHue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeaconHue.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FEAD907184A07B100839DE3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6FEAD909184A07B100839DE3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -162,51 +124,14 @@
 		6FB5CFB7184A1A2E00A91FF0 /* SDKWizard */ = {
 			isa = PBXGroup;
 			children = (
-				6FB5CFB8184A1A2E00A91FF0 /* FindLights */,
-				6FB5CFC2184A1A2E00A91FF0 /* LoadingView */,
-				6FB5CFC6184A1A2E00A91FF0 /* PHBridgeConfigurationViewController.h */,
-				6FB5CFC7184A1A2E00A91FF0 /* PHBridgeConfigurationViewController.m */,
-				6FB5CFC8184A1A2E00A91FF0 /* PHBridgeConfigurationViewController.xib */,
 				6FB5CFC9184A1A2E00A91FF0 /* PHBridgePushLinkViewController.h */,
 				6FB5CFCA184A1A2E00A91FF0 /* PHBridgePushLinkViewController.m */,
 				6FB5CFCB184A1A2E00A91FF0 /* PHBridgePushLinkViewController.xib */,
-				6FB5CFCC184A1A2E00A91FF0 /* PHBridgeSelectionViewController.h */,
-				6FB5CFCD184A1A2E00A91FF0 /* PHBridgeSelectionViewController.m */,
-				6FB5CFCE184A1A2E00A91FF0 /* PHBridgeSelectionViewController.xib */,
-				6FB5CFCF184A1A2E00A91FF0 /* PHConfigurationViewController.h */,
-				6FB5CFD0184A1A2E00A91FF0 /* PHConfigurationViewController.m */,
-				6FB5CFD1184A1A2E00A91FF0 /* PHConfigurationViewController.xib */,
 				6FB5CFD2184A1A2E00A91FF0 /* resources */,
 				6FB5CFD9184A1A2E00A91FF0 /* SoftwareUpdate */,
 			);
 			name = SDKWizard;
 			path = Classes/Vendor/SDKWizard;
-			sourceTree = "<group>";
-		};
-		6FB5CFB8184A1A2E00A91FF0 /* FindLights */ = {
-			isa = PBXGroup;
-			children = (
-				6FB5CFB9184A1A2E00A91FF0 /* PHFindLightsManualEntryViewController.h */,
-				6FB5CFBA184A1A2E00A91FF0 /* PHFindLightsManualEntryViewController.m */,
-				6FB5CFBB184A1A2E00A91FF0 /* PHFindLightsManualEntryViewController.xib */,
-				6FB5CFBC184A1A2E00A91FF0 /* PHFindLightsResultViewController.h */,
-				6FB5CFBD184A1A2E00A91FF0 /* PHFindLightsResultViewController.m */,
-				6FB5CFBE184A1A2E00A91FF0 /* PHFindLightsResultViewController.xib */,
-				6FB5CFBF184A1A2E00A91FF0 /* PHFindLightsStartViewController.h */,
-				6FB5CFC0184A1A2E00A91FF0 /* PHFindLightsStartViewController.m */,
-				6FB5CFC1184A1A2E00A91FF0 /* PHFindLightsStartViewController.xib */,
-			);
-			path = FindLights;
-			sourceTree = "<group>";
-		};
-		6FB5CFC2184A1A2E00A91FF0 /* LoadingView */ = {
-			isa = PBXGroup;
-			children = (
-				6FB5CFC3184A1A2E00A91FF0 /* PHLoadingViewController.h */,
-				6FB5CFC4184A1A2E00A91FF0 /* PHLoadingViewController.m */,
-				6FB5CFC5184A1A2E00A91FF0 /* PHLoadingViewController.xib */,
-			);
-			path = LoadingView;
 			sourceTree = "<group>";
 		};
 		6FB5CFD2184A1A2E00A91FF0 /* resources */ = {
@@ -225,8 +150,6 @@
 		6FB5CFD9184A1A2E00A91FF0 /* SoftwareUpdate */ = {
 			isa = PBXGroup;
 			children = (
-				6FB5CFDA184A1A2E00A91FF0 /* PHSoftwareUpdateManager.h */,
-				6FB5CFDB184A1A2E00A91FF0 /* PHSoftwareUpdateManager.m */,
 			);
 			path = SoftwareUpdate;
 			sourceTree = "<group>";
@@ -448,22 +371,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6FB5CFE1184A1A2E00A91FF0 /* PHFindLightsStartViewController.xib in Resources */,
 				6FB5CFE7184A1A2E00A91FF0 /* PHBridgePushLinkViewController.xib in Resources */,
-				6FB5CFE5184A1A2E00A91FF0 /* PHBridgeConfigurationViewController.xib in Resources */,
 				6FB5CFF0184A1A2E00A91FF0 /* press_smartbridge.png in Resources */,
-				6FB5CFEB184A1A2E00A91FF0 /* PHConfigurationViewController.xib in Resources */,
 				6FB5CFF1184A1A2E00A91FF0 /* press_smartbridge@2x.png in Resources */,
 				6FB5CFEE184A1A2E00A91FF0 /* addlights.png in Resources */,
 				6FB5CFEF184A1A2E00A91FF0 /* addlights@2x.png in Resources */,
-				6FB5CFE9184A1A2E00A91FF0 /* PHBridgeSelectionViewController.xib in Resources */,
 				6FB5CFED184A1A2E00A91FF0 /* addlightmanual@2x.png in Resources */,
-				6FB5CFE3184A1A2E00A91FF0 /* PHLoadingViewController.xib in Resources */,
 				6FEAD912184A07B100839DE3 /* InfoPlist.strings in Resources */,
 				6FEAD91A184A07B100839DE3 /* Images.xcassets in Resources */,
 				6FB5CFEC184A1A2E00A91FF0 /* addlightmanual.png in Resources */,
-				6FB5CFDD184A1A2E00A91FF0 /* PHFindLightsManualEntryViewController.xib in Resources */,
-				6FB5CFDF184A1A2E00A91FF0 /* PHFindLightsResultViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,26 +398,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6FB5CFE2184A1A2E00A91FF0 /* PHLoadingViewController.m in Sources */,
-				6FB5CFF2184A1A2E00A91FF0 /* PHSoftwareUpdateManager.m in Sources */,
 				6FEAD93A184A080100839DE3 /* BHMainViewController.m in Sources */,
 				6FEAD918184A07B100839DE3 /* BHAppDelegate.m in Sources */,
 				6FEAD953184A0C3F00839DE3 /* DDASLLogger.m in Sources */,
-				6FB5CFDE184A1A2E00A91FF0 /* PHFindLightsResultViewController.m in Sources */,
-				6FB5CFEA184A1A2E00A91FF0 /* PHConfigurationViewController.m in Sources */,
 				6FEAD957184A0C3F00839DE3 /* ContextFilterLogFormatter.m in Sources */,
-				6FB5CFE8184A1A2E00A91FF0 /* PHBridgeSelectionViewController.m in Sources */,
 				6FEAD956184A0C3F00839DE3 /* DDTTYLogger.m in Sources */,
 				6FB5CFE6184A1A2E00A91FF0 /* PHBridgePushLinkViewController.m in Sources */,
 				6FEAD954184A0C3F00839DE3 /* DDFileLogger.m in Sources */,
 				6FEAD955184A0C3F00839DE3 /* DDLog.m in Sources */,
 				6FEAD951184A0C3F00839DE3 /* JSONKit.m in Sources */,
 				6FEAD958184A0C3F00839DE3 /* DispatchQueueLogFormatter.m in Sources */,
-				6FB5CFDC184A1A2E00A91FF0 /* PHFindLightsManualEntryViewController.m in Sources */,
-				6FB5CFE4184A1A2E00A91FF0 /* PHBridgeConfigurationViewController.m in Sources */,
 				6FEAD914184A07B100839DE3 /* main.m in Sources */,
 				6FEAD952184A0C3F00839DE3 /* DDAbstractDatabaseLogger.m in Sources */,
-				6FB5CFE0184A1A2E00A91FF0 /* PHFindLightsStartViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

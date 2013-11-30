@@ -4,7 +4,6 @@
  ********************************************************************************/
 
 #import "PHBridgeSelectionViewController.h"
-#import "PHAppDelegate.h"
 
 @interface PHBridgeSelectionViewController ()
 

@@ -4,7 +4,6 @@
  ********************************************************************************/
 
 #import "PHSoftwareUpdateManager.h"
-#import "PHAppDelegate.h"
 
 #import <HueSDK/HueSDK.h>
 
