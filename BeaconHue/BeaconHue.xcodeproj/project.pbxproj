@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		00EB3124184A20FD0070E0E3 /* UIColor+BeaconHue.m in Sources */ = {isa = PBXBuildFile; fileRef = 00EB3123184A20FD0070E0E3 /* UIColor+BeaconHue.m */; };
+		00EB3127184A27230070E0E3 /* UIColor+Estimote.m in Sources */ = {isa = PBXBuildFile; fileRef = 00EB3126184A27230070E0E3 /* UIColor+Estimote.m */; };
 		1D25190EF00A416592CC532D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EB78C5A8BECF46C3B0F5F3DB /* libPods.a */; };
 		6FB5CFE6184A1A2E00A91FF0 /* PHBridgePushLinkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FB5CFCA184A1A2E00A91FF0 /* PHBridgePushLinkViewController.m */; };
 		6FB5CFE7184A1A2E00A91FF0 /* PHBridgePushLinkViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FB5CFCB184A1A2E00A91FF0 /* PHBridgePushLinkViewController.xib */; };
@@ -54,6 +55,8 @@
 /* Begin PBXFileReference section */
 		00EB3122184A20FD0070E0E3 /* UIColor+BeaconHue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+BeaconHue.h"; sourceTree = "<group>"; };
 		00EB3123184A20FD0070E0E3 /* UIColor+BeaconHue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+BeaconHue.m"; sourceTree = "<group>"; };
+		00EB3125184A27230070E0E3 /* UIColor+Estimote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Estimote.h"; sourceTree = "<group>"; };
+		00EB3126184A27230070E0E3 /* UIColor+Estimote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Estimote.m"; sourceTree = "<group>"; };
 		5FDB7B367A854F6F97CC57A9 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		6FB5CFC9184A1A2E00A91FF0 /* PHBridgePushLinkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHBridgePushLinkViewController.h; sourceTree = "<group>"; };
 		6FB5CFCA184A1A2E00A91FF0 /* PHBridgePushLinkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHBridgePushLinkViewController.m; sourceTree = "<group>"; };
@@ -205,6 +208,8 @@
 				6FEAD90E184A07B100839DE3 /* Supporting Files */,
 				00EB3122184A20FD0070E0E3 /* UIColor+BeaconHue.h */,
 				00EB3123184A20FD0070E0E3 /* UIColor+BeaconHue.m */,
+				00EB3125184A27230070E0E3 /* UIColor+Estimote.h */,
+				00EB3126184A27230070E0E3 /* UIColor+Estimote.m */,
 			);
 			path = BeaconHue;
 			sourceTree = "<group>";
@@ -445,6 +450,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				00EB3124184A20FD0070E0E3 /* UIColor+BeaconHue.m in Sources */,
+				00EB3127184A27230070E0E3 /* UIColor+Estimote.m in Sources */,
 				6FEAD93A184A080100839DE3 /* BHMainViewController.m in Sources */,
 				6FEAD918184A07B100839DE3 /* BHAppDelegate.m in Sources */,
 				6FEAD953184A0C3F00839DE3 /* DDASLLogger.m in Sources */,
