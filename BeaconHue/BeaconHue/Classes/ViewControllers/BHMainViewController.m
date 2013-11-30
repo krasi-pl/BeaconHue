@@ -120,22 +120,32 @@
 }
 
 
-- (PHLightState *)createLightState {
-  /***************************************************
-   The PHLightState class is used as a parameter for the
-   Hue SDK. It contains the attribute settings for an individual\
-   light. This method creates it from the current
-   user interface settings for the light
-   *****************************************************/
-  
-  
-  
-  // Create an empty lightstate
+- (void)setLightColor:(UIColor *)color {
   PHLightState *lightState = [[PHLightState alloc] init];
+  if (color) {
+    [lightState setOnBool:YES];
+    
+    float h,s,b;
+    [color getHue:&h saturation:&s brightness:&b alpha:NULL];
+    
+    float xColor, yColor;
+    [color getX:&xColor Y:&yColor brightness:&b alpha:NULL];
+    
+    [lightState setX:[NSNumber numberWithFloat:xColor]];
+    [lightState setY:[NSNumber numberWithFloat:yColor]];
+  } else {
+    [lightState setOnBool:NO];
+  }
   
-  // Check if on value should be send
-  [lightState setOnBool:YES];
+  id<PHBridgeSendAPI> bridgeSendAPI = [[[PHOverallFactory alloc] init] bridgeSendAPI];
+  [bridgeSendAPI updateLightStateForId:self.ourLight.identifier withLighState:lightState completionHandler:^(NSArray* errors) {
+    NSLog(@"Got errors");
+  }];
+}
+
+- (void) updateLight {
   
+  // Send lightstate to light
   CGFloat red = [(UISlider*)[self.rgbSliders objectAtIndex:0] value] / 255.0;
   CGFloat green = [(UISlider*)[self.rgbSliders objectAtIndex:1] value] / 255.0;
   CGFloat blue = [(UISlider*)[self.rgbSliders objectAtIndex:2] value] / 255.0;
@@ -143,73 +153,9 @@
   UIColor* sampleColor = [UIColor colorWithRed:red green:green blue:blue alpha:1.0];
   [self.rgbView setBackgroundColor:sampleColor];
   
-  float h,s,b;
-  [sampleColor getHue:&h saturation:&s brightness:&b alpha:NULL];
+  [self setLightColor:sampleColor];
   
-  float xColor, yColor;
-  [sampleColor getX:&xColor Y:&yColor brightness:NULL alpha:NULL];
-  
-  // Check if hue value should be send
-  
-      [lightState setX:[NSNumber numberWithFloat:xColor]];
-      [lightState setY:[NSNumber numberWithFloat:yColor]];
-  
-  
-  
-  
-  
-  // Check if saturation value should be send
-//  if (self.sendSat.on) {
-//    [lightState setSaturation:[NSNumber numberWithInt:((int)self.valueSat.value)]];
-//  }
-  
-  // Check if brightness value should be send
-//  if (self.sendBri.on) {
-//    [lightState setBrightness:[NSNumber numberWithInt:((int)self.valueBri.value)]];
-//  }
-  
-  // Check if xy values should be send
 
-  
-  // Check if effect value should be send
-//  if (self.sendEffect.on) {
-//    if (self.valueEffect.selectedSegmentIndex == 0) {
-//      [lightState setEffectMode:EFFECT_NONE];
-//    }
-//    else if (self.valueEffect.selectedSegmentIndex == 1) {
-//      [lightState setEffectMode:EFFECT_COLORLOOP];
-//    }
-//  }
-  
-  // Check if alert value should be send
-//  if (self.sendAlert.on) {
-//    if (self.valueAlert.selectedSegmentIndex == 0) {
-//      [lightState setAlertMode:ALERT_NONE];
-//    }
-//    else if (self.valueAlert.selectedSegmentIndex == 1) {
-//      [lightState setAlertMode:ALERT_SELECT];
-//    }
-//    else if (self.valueAlert.selectedSegmentIndex == 2) {
-//      [lightState setAlertMode:ALERT_LSELECT];
-//    }
-//  }
-//  
-//  // Check if transition time should be send
-//  if (self.sendTransitionTime.on) {
-//    [lightState setTransitionTime:[NSNumber numberWithInt:((int)self.valueTransitionTime.value)]];
-//  }
-  
-  return lightState;
-}
-
-- (void) updateLight {
-  id<PHBridgeSendAPI> bridgeSendAPI = [[[PHOverallFactory alloc] init] bridgeSendAPI];
-  
-  // Send lightstate to light
-  PHLightState *lightState = [self createLightState];
-  [bridgeSendAPI updateLightStateForId:self.ourLight.identifier withLighState:lightState completionHandler:^(NSArray* errors) {
-    
-  }];
 }
 
 
@@ -348,7 +294,7 @@
   
   // Check if an update is available
   //[self performSelector:@selector(updateCheck) withObject:nil afterDelay:1];
-    NSLog(@"have local connection");
+   // NSLog(@"have local connection");
 }
 
 - (void)noLocalConnection {
@@ -361,7 +307,7 @@
     NSLog(@"not connected :(");
   }
   else {
-    NSLog(@"Connected :)");
+    //NSLog(@"Connected :)");
   }
 }
 

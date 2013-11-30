@@ -29,7 +29,7 @@ enum {
     [UIColor calculateXY:&xy andBrightness:brightness fromColor:self forModel:model];
     *x = xy.x;
     *y = xy.y;
-    *alpha = 1.0f;
+    if (alpha) *alpha = 1.0f;
     return YES;
 }
 
