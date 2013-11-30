@@ -15,6 +15,8 @@
 @property (nonatomic, strong) PHLight* ourLight;
 @property (nonatomic, strong) UISlider* valueHue;
 @property (nonatomic, strong) UIButton* updateButton;
+@property (nonatomic, strong) NSArray* rgbSliders;
+@property (nonatomic, strong) UIView* rgbView;
 @end
 
 @implementation BHMainViewController
@@ -52,11 +54,21 @@
   label.center = self.view.center;
   [label setTextAlignment:NSTextAlignmentCenter];
   
-  self.valueHue = [[UISlider alloc] initWithFrame:CGRectMake(20, self.view.bounds.size.height - 100, 280, 40)];
-  self.valueHue.minimumValue = 0;
-  self.valueHue.maximumValue = 254;
-  [self.view addSubview: self.valueHue];
+//  self.valueHue = [[UISlider alloc] initWithFrame:CGRectMake(20, self.view.bounds.size.height - 100, 280, 40)];
+//  self.valueHue.minimumValue = 0;
+//  self.valueHue.maximumValue = 254;
+//  [self.view addSubview: self.valueHue];
   
+  for (int i=0; i<3; ++i) {
+    UISlider* slider = [[UISlider alloc] initWithFrame:CGRectMake(20, self.view.bounds.size.height - 180 + 40*i, 240, 40)];
+    slider.minimumValue = 0;
+    slider.maximumValue = 255;
+    [self.view addSubview: slider];
+  }
+  
+  
+  self.rgbView = [[UIView alloc] initWithFrame:CGRectMake(260, self.view.bounds.size.height - 180, 40, 120)];
+  [self.view addSubview:self.rgbView];
   
   self.updateButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
   self.updateButton.frame = (CGRectMake(100, self.view.bounds.size.height - 60, 120, 44));
