@@ -87,6 +87,7 @@
     slider.maximumValue = 255;
     [self.view addSubview: slider];
     [self.rgbSliders addObject:slider];
+    [slider setHidden:YES];
   }
   
   
@@ -143,8 +144,11 @@
     
     [lightState setX:[NSNumber numberWithFloat:xColor]];
     [lightState setY:[NSNumber numberWithFloat:yColor]];
+//    [self.rgbView setBackgroundColor:color];
+    [self.view setBackgroundColor:color];
   } else {
     [lightState setOnBool:NO];
+    [self.rgbView setBackgroundColor:[UIColor whiteColor]];
   }
   
   id<PHBridgeSendAPI> bridgeSendAPI = [[[PHOverallFactory alloc] init] bridgeSendAPI];
