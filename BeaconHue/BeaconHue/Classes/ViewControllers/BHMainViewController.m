@@ -30,7 +30,24 @@
 {
     if (![selectedBeacon isEqual:_selectedBeacon]) {
         _selectedBeacon = selectedBeacon;
-        UIColor *color = [UIColor colorWithShort:[selectedBeacon.ibeacon.minor shortValue]];
+        UIColor *color;
+        long value = [selectedBeacon.ibeacon.minor longValue];
+        switch (value) {
+            case 1382:
+                color = [UIColor redColor];
+                break;
+                
+            case 51161:
+                color = [UIColor greenColor];
+                break;
+
+            case 31248:
+                color = [UIColor blueColor];
+                break;
+
+            default:
+                break;
+        }
         [self setLightColor:color];
     }
 }
