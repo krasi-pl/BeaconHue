@@ -8,6 +8,7 @@
 
 #import "BHMainViewController.h"
 #import "UIColor+BeaconHue.h"
+#import "UIColor+Estimote.h"
 #import <HueSDK/HueSDK.h>
 #import <ESTBeaconManager.h>
 
@@ -24,6 +25,15 @@
 @end
 
 @implementation BHMainViewController
+
+- (void)setSelectedBeacon:(ESTBeacon *)selectedBeacon
+{
+    if (![selectedBeacon isEqual:_selectedBeacon]) {
+        _selectedBeacon = selectedBeacon;
+        UIColor *color = [UIColor colorWithShort:[selectedBeacon.ibeacon.minor shortValue]];
+        [self setLightColor:color];
+    }
+}
 
 - (id)init
 {
@@ -112,7 +122,7 @@
   });
     
     // create sample region object (you can additionaly pass major / minor values)
-    ESTBeaconRegion* region = [[ESTBeaconRegion alloc] initRegionWithIdentifier:@"EstimoteSampleRegion"];
+    ESTBeaconRegion* region = [[ESTBeaconRegion alloc] initRegionWithMajor:4004 identifier:@"EstimoteSampleRegion"];
 
     // start looking for estimote beacons in region
     // when beacon ranged beaconManager:didRangeBeacons:inRegion: invoked
@@ -324,28 +334,17 @@
      didRangeBeacons:(NSArray *)beacons
             inRegion:(ESTBeaconRegion *)region
 {
-    if([beacons count] > 0)
-    {
-        static NSArray *majors;
-        if (majors == nil) {
-            majors = @[@4004];
+    if([beacons count] > 0) {
+        ESTBeacon *beacon = [beacons firstObject];
+        if (beacon.ibeacon.proximity == CLProximityImmediate) {
+            self.selectedBeacon = beacon;
         }
-        
-        if(!self.selectedBeacon)
-        {
-            for (ESTBeacon* cBeacon in beacons) {
-                if ([majors containsObject:cBeacon.ibeacon.major]) {
-                    self.selectedBeacon = cBeacon;
-                    break;
-                }
-            }
+        else {
+            self.selectedBeacon = nil;
         }
-        else
-        {
-            for (ESTBeacon* cBeacon in beacons)
-            {
-            }
-        }
+    }
+    else {
+        self.selectedBeacon = nil;
     }
 }
 
