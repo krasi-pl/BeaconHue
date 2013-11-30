@@ -7,6 +7,7 @@
 //
 
 #import "BHMainViewController.h"
+#import "UIColor+BeaconHue.h"
 #import <HueSDK/HueSDK.h>
 
 @interface BHMainViewController ()
@@ -15,7 +16,7 @@
 @property (nonatomic, strong) PHLight* ourLight;
 @property (nonatomic, strong) UISlider* valueHue;
 @property (nonatomic, strong) UIButton* updateButton;
-@property (nonatomic, strong) NSArray* rgbSliders;
+@property (nonatomic, strong) NSMutableArray* rgbSliders;
 @property (nonatomic, strong) UIView* rgbView;
 @end
 
@@ -59,11 +60,13 @@
 //  self.valueHue.maximumValue = 254;
 //  [self.view addSubview: self.valueHue];
   
+  self.rgbSliders = [NSMutableArray array];
   for (int i=0; i<3; ++i) {
     UISlider* slider = [[UISlider alloc] initWithFrame:CGRectMake(20, self.view.bounds.size.height - 180 + 40*i, 240, 40)];
     slider.minimumValue = 0;
     slider.maximumValue = 255;
     [self.view addSubview: slider];
+    [self.rgbSliders addObject:slider];
   }
   
   
@@ -116,14 +119,26 @@
   // Check if on value should be send
   [lightState setOnBool:YES];
   
-  UIColor* sampleColor = [UIColor colorWithRed:0.34 green:0.235 blue:0.786 alpha:1.0];
-  float hue, saturation, brightness;
-  [sampleColor getHue:&hue saturation:&saturation brightness:&brightness alpha:NULL];
+  CGFloat red = [(UISlider*)[self.rgbSliders objectAtIndex:0] value] / 255.0;
+  CGFloat green = [(UISlider*)[self.rgbSliders objectAtIndex:1] value] / 255.0;
+  CGFloat blue = [(UISlider*)[self.rgbSliders objectAtIndex:2] value] / 255.0;
+  
+  UIColor* sampleColor = [UIColor colorWithRed:red green:green blue:blue alpha:1.0];
+  [self.rgbView setBackgroundColor:sampleColor];
+  
+  float h,s,b;
+  [sampleColor getHue:&h saturation:&s brightness:&b alpha:NULL];
+  
+  float xColor, yColor;
+  [sampleColor getX:&xColor Y:&yColor brightness:NULL alpha:NULL];
   
   // Check if hue value should be send
-  [lightState setHue:[NSNumber numberWithFloat:hue * 65535]];
-  [lightState setSaturation:[NSNumber numberWithFloat:saturation * 254]];
-  [lightState setBrightness:[NSNumber numberWithInteger:self.valueHue.value]];
+  
+      [lightState setX:[NSNumber numberWithFloat:xColor]];
+      [lightState setY:[NSNumber numberWithFloat:yColor]];
+  
+  
+  
   
   
   // Check if saturation value should be send
@@ -137,10 +152,7 @@
 //  }
   
   // Check if xy values should be send
-//  if (self.sendXY.on) {
-//    [lightState setX:[NSNumber numberWithFloat:self.valueX.value]];
-//    [lightState setY:[NSNumber numberWithFloat:self.valueY.value]];
-//  }
+
   
   // Check if effect value should be send
 //  if (self.sendEffect.on) {
