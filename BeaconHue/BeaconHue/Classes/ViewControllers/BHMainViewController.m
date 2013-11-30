@@ -12,7 +12,9 @@
 @interface BHMainViewController ()
 
 @property (nonatomic, strong) PHHueSDK* phHueSDK;
-
+@property (nonatomic, strong) PHLight* ourLight;
+@property (nonatomic, strong) UISlider* valueHue;
+@property (nonatomic, strong) UIButton* updateButton;
 @end
 
 @implementation BHMainViewController
@@ -50,6 +52,18 @@
   label.center = self.view.center;
   [label setTextAlignment:NSTextAlignmentCenter];
   
+  self.valueHue = [[UISlider alloc] initWithFrame:CGRectMake(20, self.view.bounds.size.height - 100, 280, 40)];
+  self.valueHue.minimumValue = 0;
+  self.valueHue.maximumValue = 254;
+  [self.view addSubview: self.valueHue];
+  
+  
+  self.updateButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+  self.updateButton.frame = (CGRectMake(100, self.view.bounds.size.height - 60, 120, 44));
+  [self.updateButton setTitle:@"Update" forState:UIControlStateNormal];
+  [self.updateButton addTarget:self action:@selector(updateLight) forControlEvents:UIControlEventTouchUpInside];
+  
+  [self.view addSubview:self.updateButton];
   [self.view addSubview:label];
 }
 
@@ -59,9 +73,103 @@
   dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
   dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
     NSLog(@"do saome magic");
+    
+    PHBridgeResourcesCache *cache = [PHBridgeResourcesReader readBridgeResourcesCache];
+
+    
+    for (PHLight* light in cache.lights) {
+      NSLog(@"Got : %@", light);
+    }
+    
+    self.ourLight = [cache.lights objectForKey:@"2"];
+    
+    
   });
 }
 
+
+- (PHLightState *)createLightState {
+  /***************************************************
+   The PHLightState class is used as a parameter for the
+   Hue SDK. It contains the attribute settings for an individual\
+   light. This method creates it from the current
+   user interface settings for the light
+   *****************************************************/
+  
+  
+  
+  // Create an empty lightstate
+  PHLightState *lightState = [[PHLightState alloc] init];
+  
+  // Check if on value should be send
+  [lightState setOnBool:YES];
+  
+  UIColor* sampleColor = [UIColor colorWithRed:0.34 green:0.235 blue:0.786 alpha:1.0];
+  float hue, saturation, brightness;
+  [sampleColor getHue:&hue saturation:&saturation brightness:&brightness alpha:NULL];
+  
+  // Check if hue value should be send
+  [lightState setHue:[NSNumber numberWithFloat:hue * 65535]];
+  [lightState setSaturation:[NSNumber numberWithFloat:saturation * 254]];
+  [lightState setBrightness:[NSNumber numberWithInteger:self.valueHue.value]];
+  
+  
+  // Check if saturation value should be send
+//  if (self.sendSat.on) {
+//    [lightState setSaturation:[NSNumber numberWithInt:((int)self.valueSat.value)]];
+//  }
+  
+  // Check if brightness value should be send
+//  if (self.sendBri.on) {
+//    [lightState setBrightness:[NSNumber numberWithInt:((int)self.valueBri.value)]];
+//  }
+  
+  // Check if xy values should be send
+//  if (self.sendXY.on) {
+//    [lightState setX:[NSNumber numberWithFloat:self.valueX.value]];
+//    [lightState setY:[NSNumber numberWithFloat:self.valueY.value]];
+//  }
+  
+  // Check if effect value should be send
+//  if (self.sendEffect.on) {
+//    if (self.valueEffect.selectedSegmentIndex == 0) {
+//      [lightState setEffectMode:EFFECT_NONE];
+//    }
+//    else if (self.valueEffect.selectedSegmentIndex == 1) {
+//      [lightState setEffectMode:EFFECT_COLORLOOP];
+//    }
+//  }
+  
+  // Check if alert value should be send
+//  if (self.sendAlert.on) {
+//    if (self.valueAlert.selectedSegmentIndex == 0) {
+//      [lightState setAlertMode:ALERT_NONE];
+//    }
+//    else if (self.valueAlert.selectedSegmentIndex == 1) {
+//      [lightState setAlertMode:ALERT_SELECT];
+//    }
+//    else if (self.valueAlert.selectedSegmentIndex == 2) {
+//      [lightState setAlertMode:ALERT_LSELECT];
+//    }
+//  }
+//  
+//  // Check if transition time should be send
+//  if (self.sendTransitionTime.on) {
+//    [lightState setTransitionTime:[NSNumber numberWithInt:((int)self.valueTransitionTime.value)]];
+//  }
+  
+  return lightState;
+}
+
+- (void) updateLight {
+  id<PHBridgeSendAPI> bridgeSendAPI = [[[PHOverallFactory alloc] init] bridgeSendAPI];
+  
+  // Send lightstate to light
+  PHLightState *lightState = [self createLightState];
+  [bridgeSendAPI updateLightStateForId:self.ourLight.identifier withLighState:lightState completionHandler:^(NSArray* errors) {
+    
+  }];
+}
 
 
 #pragma mark - Hue start methods
