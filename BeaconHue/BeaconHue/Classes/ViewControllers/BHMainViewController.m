@@ -54,6 +54,15 @@
 }
 
 
+- (void) viewDidAppear:(BOOL)animated {
+  double delayInSeconds = 5.0;
+  dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+  dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+    NSLog(@"do saome magic");
+  });
+}
+
+
 
 #pragma mark - Hue start methods
 - (void)notAuthenticated {
@@ -177,8 +186,34 @@
  */
 - (void)doAuthentication {
   // Disable heartbeats
+  NSLog(@"do authenticate!!");
   [self disableLocalHeartbeat];
+}
 
+/**
+ Notification receiver for successful local connection
+ */
+- (void)localConnection {
+  // Check current connection state
+  [self checkConnectionState];
+  
+  // Check if an update is available
+  //[self performSelector:@selector(updateCheck) withObject:nil afterDelay:1];
+    NSLog(@"have local connection");
+}
+
+- (void)noLocalConnection {
+  NSLog(@"no local connection");
+}
+
+
+- (void)checkConnectionState {
+  if (!self.phHueSDK.localConnected) {
+    NSLog(@"not connected :(");
+  }
+  else {
+    NSLog(@"Connected :)");
+  }
 }
 
 /**
