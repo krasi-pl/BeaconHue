@@ -9,11 +9,14 @@
 #import "BHMainViewController.h"
 #import "UIColor+BeaconHue.h"
 #import <HueSDK/HueSDK.h>
+#import <ESTBeaconManager.h>
 
-@interface BHMainViewController ()
+@interface BHMainViewController () <ESTBeaconManagerDelegate>
 
 @property (nonatomic, strong) PHHueSDK* phHueSDK;
 @property (nonatomic, strong) PHLight* ourLight;
+@property (nonatomic, strong) ESTBeaconManager* beaconManager;
+@property (nonatomic, strong) ESTBeacon* selectedBeacon;
 @property (nonatomic, strong) UISlider* valueHue;
 @property (nonatomic, strong) UIButton* updateButton;
 @property (nonatomic, strong) NSMutableArray* rgbSliders;
@@ -39,6 +42,13 @@
     [notificationManager registerObject:self withSelector:@selector(notAuthenticated) forNotification:NO_LOCAL_AUTHENTICATION_NOTIFICATION];
     
      [self enableLocalHeartbeat];
+
+      // setup Estimote beacon manager
+      
+      // create manager instance
+      self.beaconManager = [[ESTBeaconManager alloc] init];
+      self.beaconManager.delegate = self;
+      //    self.beaconManager.avoidUnknownStateBeacons = YES;
   }
   return self;
 }
@@ -100,6 +110,13 @@
     
     
   });
+    
+    // create sample region object (you can additionaly pass major / minor values)
+    ESTBeaconRegion* region = [[ESTBeaconRegion alloc] initRegionWithIdentifier:@"EstimoteSampleRegion"];
+
+    // start looking for estimote beacons in region
+    // when beacon ranged beaconManager:didRangeBeacons:inRegion: invoked
+    [self.beaconManager startRangingBeaconsInRegion:region];
 }
 
 
@@ -354,5 +371,37 @@
 - (void)pushlinkSuccess {
 
 }
+
+#pragma mark - ESTBeaconDelegate
+
+-(void)beaconManager:(ESTBeaconManager *)manager
+     didRangeBeacons:(NSArray *)beacons
+            inRegion:(ESTBeaconRegion *)region
+{
+    if([beacons count] > 0)
+    {
+        static NSArray *majors;
+        if (majors == nil) {
+            majors = @[@4004];
+        }
+        
+        if(!self.selectedBeacon)
+        {
+            for (ESTBeacon* cBeacon in beacons) {
+                if ([majors containsObject:cBeacon.ibeacon.major]) {
+                    self.selectedBeacon = cBeacon;
+                    break;
+                }
+            }
+        }
+        else
+        {
+            for (ESTBeacon* cBeacon in beacons)
+            {
+            }
+        }
+    }
+}
+
 
 @end
