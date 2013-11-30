@@ -10,4 +10,6 @@
 
 @interface UIColor (Estimote)
 
++ (instancetype)colorWithShort:(unsigned short)value;
+
 @end
